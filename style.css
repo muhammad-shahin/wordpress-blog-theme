@@ -10,3 +10,8 @@ License URI: http://www.gnu.org/gpl-2.0.html
 Tags: blog, education
 Text Domain: practice
 */
+
+textarea {
+  border: 2px solid black !important;
+  outline: none;
+}
