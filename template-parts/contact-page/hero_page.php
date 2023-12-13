@@ -1,6 +1,6 @@
 <div class="text-center py-10 mb-10 bg-no-repeat w-full bg-cover bg-center text-white relative page-banner">
  <!-- title & tagline -->
- <div class="header relative z-[100]">
+ <div class="header relative z-[100] title-tag">
   <h3 class="text-2xl">
    <?php
    bloginfo("description");
@@ -25,5 +25,6 @@
   );
   ?>
  </div>
+ <!-- overlay effect -->
  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
 </div>

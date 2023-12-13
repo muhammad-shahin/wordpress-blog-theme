@@ -1,5 +1,6 @@
+<div class="text-center py-10 mb-10 bg-no-repeat w-full bg-cover bg-center text-white relative header">
  <!-- title & tagline -->
- <div class="text-center space-y-3 mt-10 header">
+ <div class="space-y-4 relative z-[100] title-tag">
   <h3 class="text-2xl">
    <?php
    bloginfo("description");
@@ -13,15 +14,18 @@
    </h1>
   </a>
  </div>
- <div class="text-center font-medium text-blue-500 py-8">
-  <?php
-  wp_nav_menu(
-   array(
-    'theme_location' => 'topmenu',
-    'menu_id' => 'topmenu-container',
-    'menu_class' => 'flex justify-center items-center gap-6',
-   )
-  );
-  ?>
- </div>
- <hr class="mx-[5%] my-10" />
+ <!-- overlay effect -->
+ <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+</div>
+<div class="text-center font-medium text-blue-500 py-8">
+ <?php
+ wp_nav_menu(
+  array(
+   'theme_location' => 'topmenu',
+   'menu_id' => 'topmenu-container',
+   'menu_class' => 'flex justify-center items-center gap-6',
+  )
+ );
+ ?>
+</div>
+<hr class="mx-[5%] my-10" />

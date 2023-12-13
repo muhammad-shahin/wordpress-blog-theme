@@ -16,7 +16,14 @@ function practice_bootstrapping()
  load_theme_textdomain("practice");
  add_theme_support("post-thumbnails");
  add_theme_support("title-tag");
- add_theme_support("custom-header"); //it will enable header option in dashboard > appearance
+
+ // custom header with image & site title & tag line editing option
+ $practice_custom_header_details = array(
+  'header-text' => true,
+  'default-text-color' => '#333',
+ );
+
+ add_theme_support("custom-header", $practice_custom_header_details); //it will enable header option in dashboard > appearance (2nd parameter is for editing title & tagline)
 
  // register new menu
  register_nav_menu("topmenu", __("Top Menu", 'practice'));
@@ -126,7 +133,28 @@ function practice_hero_page_banner()
     background-image: url(<?php echo $practice_feat_image ?>);
    }
   </style>
+  <?php
+ }
+
+ if (is_front_page()) {
+  if (current_theme_supports("custom-header")) {
+  ?>
+   <style>
+    .header {
+     background-image: url(<?php echo header_image(); ?>);
+    }
+
+    .title-tag {
+     color: #<?php echo get_header_textcolor(); ?>;
+     <?php
+     if(!display_header_text()){
+      echo "display : none;";
+     }
+     ?>
+    }
+   </style>
 <?php
+  }
  }
 }
 add_action("wp_head", "practice_hero_page_banner", 11);
