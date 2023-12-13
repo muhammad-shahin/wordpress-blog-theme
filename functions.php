@@ -1,8 +1,8 @@
 <?php
 
-if(site_url() == "http://localhost/practice-site"){
+if (site_url() == "http://localhost/practice-site") {
  define("VERSION", time());
-}else{
+} else {
  define("VERSION", wp_get_theme("Version"));
 }
 
@@ -16,6 +16,7 @@ function practice_bootstrapping()
  load_theme_textdomain("practice");
  add_theme_support("post-thumbnails");
  add_theme_support("title-tag");
+ add_theme_support("custom-header"); //it will enable header option in dashboard > appearance
 
  // register new menu
  register_nav_menu("topmenu", __("Top Menu", 'practice'));
@@ -28,14 +29,14 @@ add_action("after_setup_theme", "practice_bootstrapping");
 function practice_assets()
 {
  wp_enqueue_style("practice", get_stylesheet_uri(), null, VERSION);
- wp_enqueue_style("featherlight-css","//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
- 
+ wp_enqueue_style("featherlight-css", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
+
  // external js
  wp_enqueue_script("tailwind", "//cdn.tailwindcss.com");
  wp_enqueue_script("featherlight-js", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js", array("jquery"), "0.0.1", true);
 
  // internal js
-  // old way
+ // old way
  // wp_enqueue_script("practice-main", get_template_directory_uri()."/assets/js/main.js", null, "0.0.1", true);
  wp_enqueue_script("practice-main", get_theme_file_uri("/assets/js/main.js"), array("jquery", "featherlight-js"), "0.0.1", true); // new way (php 4.+)
 
@@ -98,16 +99,34 @@ function practice_the_excerpt($excerpt)
 }
 add_filter("the_excerpt", "practice_the_excerpt");
 
-function practice_protected_title_change(){
-return "%s";
+function practice_protected_title_change()
+{
+ return "%s";
 }
 // remove protected keyword from post title
 add_filter("protected_title_format", "practice_protected_title_change");
 
 // add custom css class into wordpress nav_menu_items <li> tag
 
-function practice_menu_item_class($classes, $item){
-$classes[] = "hover:scale-[1.03] hover:font-bold hover:underline duration-300 hover:text-purple-500"; //pass your css classes here
-return $classes;
+function practice_menu_item_class($classes, $item)
+{
+ $classes[] = "hover:scale-[1.03] hover:font-bold hover:underline duration-300 hover:text-purple-500"; //pass your css classes here
+ return $classes;
 }
 add_filter("nav_menu_css_class", "practice_menu_item_class", 10, 4);
+
+// setting background image on hero-page.php
+function practice_hero_page_banner()
+{
+ if (is_page()) {
+  $practice_feat_image = get_the_post_thumbnail_url(null, "large");
+?>
+  <style>
+   .page-banner {
+    background-image: url(<?php echo $practice_feat_image ?>);
+   }
+  </style>
+<?php
+ }
+}
+add_action("wp_head", "practice_hero_page_banner", 11);

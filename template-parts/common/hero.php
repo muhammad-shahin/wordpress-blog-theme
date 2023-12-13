@@ -1,5 +1,5 @@
  <!-- title & tagline -->
- <div class="text-center space-y-3 mt-10">
+ <div class="text-center space-y-3 mt-10 header">
   <h3 class="text-2xl">
    <?php
    bloginfo("description");
@@ -21,7 +21,7 @@
     'menu_id' => 'topmenu-container',
     'menu_class' => 'flex justify-center items-center gap-6',
    )
-   );
+  );
   ?>
  </div>
  <hr class="mx-[5%] my-10" />
