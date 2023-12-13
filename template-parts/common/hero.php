@@ -1,4 +1,15 @@
 <div class="text-center py-10 mb-10 bg-no-repeat w-full bg-cover bg-center text-white relative header">
+ <!-- custom logo -->
+ <?php
+ if (current_theme_supports('custom-logo')) {
+ ?>
+  <div class="header-logo w-fit mx-auto rounded-full overflow-hidden relative z-[100]">
+   <?php the_custom_logo(); ?>
+  </div>
+ <?php
+ }
+ ?>
+
  <!-- title & tagline -->
  <div class="space-y-4 relative z-[100] title-tag">
   <h3 class="text-2xl">
