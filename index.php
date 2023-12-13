@@ -34,13 +34,13 @@
      <?php if (has_post_thumbnail()) : ?>
        <?php
         $thumbnail_url = get_the_post_thumbnail_url( null, "larage" );
-        printf('<a href="%s" data-featherlight="image">', $thumbnail_url);
+        printf('<a href="#" class="popup" data-featherlight="image">');
         the_post_thumbnail('large', array("class" => "w-full")); 
         echo '</a>';
         ?>
       <?php else : ?>
         <?php
-        printf('<a href="%s" data-featherlight="image">', "https://i.ibb.co/bLPq5Zq/flipcard5.jpg");
+        printf('<a href="#" class="popup" data-featherlight="image">', "https://i.ibb.co/bLPq5Zq/flipcard5.jpg");
        echo '<img src="https://i.ibb.co/bLPq5Zq/flipcard5.jpg" />';
        echo '</a>';
        ?>

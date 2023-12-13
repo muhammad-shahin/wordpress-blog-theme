@@ -1,4 +1,11 @@
 <?php
+
+if(site_url() == "http://localhost/practice-site"){
+ define("VERSION", time());
+}else{
+ define("VERSION", wp_get_theme("Version"));
+}
+
 function change_case($text)
 {
  return strtoupper($text);
@@ -20,11 +27,18 @@ add_action("after_setup_theme", "practice_bootstrapping");
 // this way we can add internal and external scripts
 function practice_assets()
 {
- wp_enqueue_style("practice", get_stylesheet_uri());
- wp_enqueue_script("tailwind", "//cdn.tailwindcss.com");
+ wp_enqueue_style("practice", get_stylesheet_uri(), null, VERSION);
  wp_enqueue_style("featherlight-css","//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
-
+ 
+ // external js
+ wp_enqueue_script("tailwind", "//cdn.tailwindcss.com");
  wp_enqueue_script("featherlight-js", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js", array("jquery"), "0.0.1", true);
+
+ // internal js
+  // old way
+ // wp_enqueue_script("practice-main", get_template_directory_uri()."/assets/js/main.js", null, "0.0.1", true);
+ wp_enqueue_script("practice-main", get_theme_file_uri("/assets/js/main.js"), array("jquery", "featherlight-js"), "0.0.1", true); // new way (php 4.+)
+
 }
 add_action("wp_enqueue_scripts", "practice_assets");
 

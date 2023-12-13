@@ -1,5 +1,5 @@
 <?php wp_footer(); ?>
-<footer class="bg-gray-500 text-white font-medium text-center flex justify-evenly items-center">
+<footer class="bg-gray-500 text-white font-medium text-center flex justify-evenly items-center mt-10 py-4">
  <!-- left side -->
  <div>
   <?php
@@ -25,7 +25,8 @@
     "theme_location" => "footermenu",
     "menu_id" => "footermenu-container",
     "menu_class" => "flex justify-center items-center gap-6 underline text-white",
-   ));
+   )
+  );
   ?>
  </div>
 </footer>
