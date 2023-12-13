@@ -6,7 +6,7 @@
  <?php get_template_part("hero"); ?>
 
  <!-- single blog post -->
- <div class="mx-[5%] space-y-8 py-10 flex justify-between items-start">
+ <div class="mx-[15%] space-y-8 py-10 flex justify-between items-start">
   <?php while (have_posts()) : the_post(); ?>
    <div <?php post_class('p-5 border border-black rounded'); ?>>
     <!-- blog title -->
@@ -27,9 +27,18 @@
 
      <div class="max-w-[850px] space-y-6">
       <?php if (has_post_thumbnail()) : ?>
-       <?php the_post_thumbnail('large'); ?>
+       <?php
+        $thumbnail_url = get_the_post_thumbnail_url( null, "larage" );
+        printf('<a href="%s" data-featherlight="image">', $thumbnail_url);
+        the_post_thumbnail('large', array("class" => "w-full")); 
+        echo '</a>';
+        ?>
       <?php else : ?>
-       <img src="https://i.ibb.co/bLPq5Zq/flipcard5.jpg" />
+        <?php
+        printf('<a href="%s" data-featherlight="image">', "https://i.ibb.co/bLPq5Zq/flipcard5.jpg");
+       echo '<img src="https://i.ibb.co/bLPq5Zq/flipcard5.jpg" />';
+       echo '</a>';
+       ?>
       <?php endif; ?>
       <div class="text-base">
        <?php the_content(); ?>
@@ -50,7 +59,6 @@
     </div>
    <?php endif; ?>
    </div>
-
    <!-- sidebar -->
    <div>
     <?php if (is_active_sidebar("sidebar-1")) {

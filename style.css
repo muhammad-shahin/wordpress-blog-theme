@@ -11,7 +11,12 @@ Tags: blog, education
 Text Domain: practice
 */
 
-textarea {
-  border: 2px solid black !important;
+textarea,
+input {
+  border: 2px solid black;
   outline: none;
+  border-radius: 4px;
+  padding: 10px 20px !important;
+}
+body {
 }

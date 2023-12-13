@@ -13,4 +13,15 @@
    </h1>
   </a>
  </div>
+ <div class="text-center font-medium text-blue-500 py-8">
+  <?php
+  wp_nav_menu(
+   array(
+    'theme_location' => 'topmenu',
+    'menu_id' => 'topmenu-container',
+    'menu_class' => 'flex justify-center items-center gap-6',
+   )
+   );
+  ?>
+ </div>
  <hr class="mx-[5%] my-10" />

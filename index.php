@@ -31,17 +31,30 @@
      </div>
 
      <div class="max-w-[850px] space-y-6">
-      <?php if (has_post_thumbnail()) {
-       the_post_thumbnail('large');
-      } else {
+     <?php if (has_post_thumbnail()) : ?>
+       <?php
+        $thumbnail_url = get_the_post_thumbnail_url( null, "larage" );
+        printf('<a href="%s" data-featherlight="image">', $thumbnail_url);
+        the_post_thumbnail('large', array("class" => "w-full")); 
+        echo '</a>';
+        ?>
+      <?php else : ?>
+        <?php
+        printf('<a href="%s" data-featherlight="image">', "https://i.ibb.co/bLPq5Zq/flipcard5.jpg");
        echo '<img src="https://i.ibb.co/bLPq5Zq/flipcard5.jpg" />';
-      } ?>
+       echo '</a>';
+       ?>
+      <?php endif; ?>
       <div class="text-base">
        <?php
        if (is_single()) {
         the_content();
        } else {
-        the_excerpt();
+        if (!post_password_required()) {
+         the_excerpt();
+        } else {
+         echo get_the_password_form();
+        }
        }
        ?>
 
