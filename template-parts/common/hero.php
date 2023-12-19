@@ -38,5 +38,6 @@
   )
  );
  ?>
+ <textarea name="" id="" cols="30" rows="10"></textarea>
 </div>
 <hr class="mx-[5%] my-10" />

@@ -1,0 +1,18 @@
+/* 
+Theme Name: Tech Blog
+Theme URI: 
+Author: SHAHIN
+Author URI: muhammadshahin.web.app
+Description: Tech Blog - A Simple Blog Theme for Tech Enthusiast
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/gpl-2.0.html
+Tags: blog, education
+Text Domain: tech
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}

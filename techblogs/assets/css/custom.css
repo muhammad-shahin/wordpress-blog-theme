@@ -1,0 +1,109 @@
+body {
+}
+.link {
+  color: blue;
+  text-decoration: underline;
+  font-size: medium;
+  text-align: center;
+}
+
+/* menu & sub menu styles */
+/* #main-menu{
+  position: relative;
+} */
+#main-menu > li {
+  position: relative;
+  padding: 10px 20px;
+}
+@media (min-width: 320px) and (max-width: 767.98px) {
+  #main-menu > li {
+    padding: 10px 8px;
+  }
+}
+#main-menu > li:hover {
+  cursor: pointer;
+  background-color: rgb(48, 170, 247);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+#main-menu > li > ul {
+  position: absolute;
+  bottom: -45px;
+  left: 0;
+  background-color: rgb(48, 170, 247);
+  color: white;
+  /* transform: translateY(50px); */
+  min-width: 9rem;
+  padding: 8px 5px;
+  transform: scale(0);
+}
+#main-menu > li > ul:hover {
+  transition: all 0.1s ease-in-out;
+}
+#main-menu > li > ul > li {
+  padding: 0 12px;
+}
+#main-menu > li > ul > li:hover {
+  background-color: purple;
+  padding: 0 18px;
+  transition: all 0.1s ease-in-out;
+}
+#main-menu > li:hover > ul {
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.page-numbers {
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  font-size: medium;
+  font-weight: 600;
+  border-radius: 50%; /* Set border-radius to 50% for a perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: gray;
+  color: white;
+}
+.page-numbers:hover {
+  background-color: blueviolet;
+  transition: all 0.3s linear;
+}
+.page-numbers.current {
+  background-color: blueviolet;
+  color: white;
+}
+
+.next.page-numbers {
+  width: auto;
+  height: auto;
+  padding: 8px;
+  padding: 8px 20px;
+  background-color: blueviolet;
+  font-size: medium;
+  font-weight: 600;
+  border: 2px solid transparent;
+  color: white;
+  margin-left: 10px;
+  border-radius: 0%;
+}
+.prev.page-numbers {
+  width: auto;
+  height: auto;
+  padding: 8px;
+  padding: 8px 20px;
+  background-color: blueviolet;
+  font-size: medium;
+  font-weight: 600;
+  border: 2px solid transparent;
+  color: white;
+  margin-left: 10px;
+  border-radius: 0%;
+}
