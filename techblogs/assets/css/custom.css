@@ -107,3 +107,11 @@ body {
   margin-left: 10px;
   border-radius: 0%;
 }
+
+/* slider active button color */
+.not-active {
+  background-color: rgb(162, 155, 155);
+}
+.active {
+  background-color: white;
+}
