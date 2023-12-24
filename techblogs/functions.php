@@ -1,4 +1,6 @@
 <?php
+// include tgm
+require_once get_theme_file_path("/includes/tgm.php");
 // basic theme setup
 if (site_url() == "http://localhost/practice-site") {
  define("VERSION", time());
