@@ -16,7 +16,7 @@
       the_post();
       ?>
       <div class="<?php post_class(); ?>">
-        <div class="shadow-xl cursor-pointer hover:-translate-y-2 duration-300">
+        <a href="<?php the_permalink(); ?>" class="block shadow-xl cursor-pointer hover:-translate-y-2 duration-300">
 
           <!-- post thumbnail -->
           <div class="mx-auto relative">
@@ -76,7 +76,7 @@
               <?php echo esc_html(get_the_date('F j, Y')); ?>
             </p>
           </div>
-        </div>
+        </a>
       </div>
     <?php } ?>
 

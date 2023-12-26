@@ -20,15 +20,48 @@
    <div class="flex w-full translate-x-[0%] duration-300 slide-item">
     <!-- slide 1 -->
     <div class="min-w-full ">
-     <img src="https://i.ibb.co/4S1Pcj1/team-member-1.jpg" class="object-cover mx-auto">
+     <?php
+     $slider_1_image = get_field('slider_1_image');
+     if ($slider_1_image) {
+      ?>
+      <img src="<?php echo esc_url($slider_1_image) ?>" class="object-cover mx-auto">
+      <?php
+     } else {
+      ?>
+      <img src="https://i.ibb.co/TBVR1RQ/team-member-2.jpg" class="object-cover mx-auto">
+      <?php
+     }
+     ?>
     </div>
     <!-- slide 2 -->
     <div class="min-w-full">
-     <img src="https://i.ibb.co/TBVR1RQ/team-member-3.jpg" class="object-cover mx-auto">
+     <?php
+     $slider_2_image = get_field('slider_2_image');
+     if ($slider_2_image) {
+      ?>
+      <img src="<?php echo esc_url($slider_2_image) ?>" class="object-cover mx-auto">
+      <?php
+     } else {
+      ?>
+      <img src="https://i.ibb.co/TBVR1RQ/team-member-3.jpg" class="object-cover mx-auto">
+      <?php
+     }
+     ?>
     </div>
     <!-- slide 3 -->
     <div class="min-w-full">
-     <img src="https://i.ibb.co/s9VJSvz/team-member-4.jpg" class="object-cover mx-auto">
+     <?php
+     $slider_3_image = get_field('slider_3_image');
+     if ($slider_3_image) {
+      ?>
+      <img src="<?php echo esc_url($slider_3_image) ?>" class="object-cover mx-auto">
+      <?php
+     } else {
+      ?>
+      <img src="https://i.ibb.co/s9VJSvz/team-member-4.jpg" class="object-cover mx-auto">
+      <?php
+     }
+     ?>
     </div>
    </div>
    <!-- slider buttons -->
