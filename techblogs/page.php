@@ -24,11 +24,11 @@
      $slider_1_image = get_field('slider_1_image');
      if ($slider_1_image) {
       ?>
-      <img src="<?php echo esc_url($slider_1_image) ?>" class="object-cover mx-auto">
+      <img src="<?php echo esc_url($slider_1_image) ?>" class="object-cover mx-auto w-full">
       <?php
      } else {
       ?>
-      <img src="https://i.ibb.co/TBVR1RQ/team-member-2.jpg" class="object-cover mx-auto">
+      <img src="https://i.ibb.co/TBVR1RQ/team-member-2.jpg" class="object-cover mx-auto w-full">
       <?php
      }
      ?>
@@ -39,11 +39,11 @@
      $slider_2_image = get_field('slider_2_image');
      if ($slider_2_image) {
       ?>
-      <img src="<?php echo esc_url($slider_2_image) ?>" class="object-cover mx-auto">
+      <img src="<?php echo esc_url($slider_2_image) ?>" class="object-cover mx-auto w-full">
       <?php
      } else {
       ?>
-      <img src="https://i.ibb.co/TBVR1RQ/team-member-3.jpg" class="object-cover mx-auto">
+      <img src="https://i.ibb.co/TBVR1RQ/team-member-3.jpg" class="object-cover mx-auto w-full">
       <?php
      }
      ?>
@@ -54,11 +54,11 @@
      $slider_3_image = get_field('slider_3_image');
      if ($slider_3_image) {
       ?>
-      <img src="<?php echo esc_url($slider_3_image) ?>" class="object-cover mx-auto">
+      <img src="<?php echo esc_url($slider_3_image) ?>" class="object-cover mx-auto w-full">
       <?php
      } else {
       ?>
-      <img src="https://i.ibb.co/s9VJSvz/team-member-4.jpg" class="object-cover mx-auto">
+      <img src="https://i.ibb.co/s9VJSvz/team-member-4.jpg" class="object-cover mx-auto w-full">
       <?php
      }
      ?>

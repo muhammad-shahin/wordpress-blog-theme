@@ -26,6 +26,6 @@ jQuery(function ($) {
   });
 
   // autoplay slider
-  var intervalTime = 3000;
+  var intervalTime = 5000;
   var autoplayInterval = setInterval(nextSlide, intervalTime);
 });
