@@ -1,7 +1,6 @@
 jQuery(function ($) {
   var currentSlide = 0;
   var totalSlides = $('.block').length;
-  console.log(totalSlides);
 
   function showSlide(index) {
     $('.slide-item').css('transform', 'translateX(' + -index * 100 + '%)');
@@ -11,7 +10,6 @@ jQuery(function ($) {
 
   function nextSlide() {
     currentSlide = (currentSlide + 1) % totalSlides;
-    console.log(currentSlide);
     showSlide(currentSlide);
   }
 

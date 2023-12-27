@@ -1,6 +1,10 @@
 <?php
 // include tgm
 require_once get_theme_file_path("/includes/tgm.php");
+// include meta box created by acf
+require_once get_theme_file_path("/includes/acf-mb.php");
+// include meta box created by cmb2
+require_once get_theme_file_path("/includes/cmb2-mb.php");
 // basic theme setup
 if (site_url() == "http://localhost/practice-site") {
  define("VERSION", time());
@@ -24,3 +28,6 @@ require get_template_directory() . "/includes/nav-menu.php";
 
 // include logo position
 require get_template_directory() . "/includes/logo-position.php";
+
+// filter to hide acf menu from admin dashboard
+// add_filter('acf/settings/show_admin', '__return_false');
