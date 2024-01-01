@@ -9,6 +9,17 @@
   <!-- header with nav bar -->
   <?php get_template_part('template-parts/nav-menu') ?>
 
+  <!-- search blog -->
+  <div class="w-fit mx-auto mt-10">
+    <!-- <form class="relative flex justify-center items-center gap-3">
+      <input type="text" class="px-5 py-2 bg-gray-100 rounded outline-none min-w-[320px]" placeholder="Search Blog">
+      <button
+        class="dashicons dashicons-search text-[28px] text-purple-600 flex justify-center items-center cursor-pointer absolute right-2 top-[50%] translate-y-[-50%]"></button>
+    </form> -->
+
+    <?php get_search_form(); ?>
+  </div>
+
   <!-- show latest post here -->
   <section class="lg:mx-[15%] mx-[5%] grid lg:grid-cols-3 md:grid-col-2 grid-cols-1 py-20 gap-10">
     <?php
@@ -83,10 +94,12 @@
     <!-- add pagination links -->
     <div class="pagination w-[70vw] text-center">
       <?php
-      echo paginate_links(array(
-        'prev_text' => __('&laquo; Previous', 'tech'),
-        'next_text' => __('Next &raquo;', 'tech'),
-      ));
+      echo paginate_links(
+        array(
+          'prev_text' => __('&laquo; Previous', 'tech'),
+          'next_text' => __('Next &raquo;', 'tech'),
+        )
+      );
       ?>
     </div>
   </section>
