@@ -11,12 +11,6 @@
 
   <!-- search blog -->
   <div class="w-fit mx-auto mt-10">
-    <!-- <form class="relative flex justify-center items-center gap-3">
-      <input type="text" class="px-5 py-2 bg-gray-100 rounded outline-none min-w-[320px]" placeholder="Search Blog">
-      <button
-        class="dashicons dashicons-search text-[28px] text-purple-600 flex justify-center items-center cursor-pointer absolute right-2 top-[50%] translate-y-[-50%]"></button>
-    </form> -->
-
     <?php get_search_form(); ?>
   </div>
 
