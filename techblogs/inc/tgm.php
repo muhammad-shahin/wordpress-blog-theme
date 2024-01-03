@@ -16,6 +16,12 @@ function tech_register_required_plugins()
 			'slug' => 'cmb2',
 			'required' => false,
 		),
+		array(
+			'name' => 'CMB2',
+			'slug' => 'cmb2-attached-posts',
+			'required' => true,
+			'source' => 'https://codeload.github.com/CMB2/cmb2-attached-posts/zip/refs/heads/master',
+		),
 
 	);
 	$config = array(

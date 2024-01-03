@@ -21,16 +21,17 @@
       </h1>
    </div>
 
-   <!-- show latest post here -->
+   <!-- show latest book here -->
    <section class="lg:mx-[15%] mx-[5%] grid lg:grid-cols-3 md:grid-col-2 grid-cols-1 py-20 gap-10">
       <?php
       while (have_posts()) {
          the_post();
          ?>
          <div class="<?php post_class(); ?>">
-            <a href="<?php the_permalink(); ?>" class="block shadow-xl cursor-pointer hover:-translate-y-2 duration-300">
+            <a href="<?php echo esc_url(get_the_permalink()); ?>"
+               class="block shadow-xl cursor-pointer hover:-translate-y-2 duration-300">
 
-               <!-- post thumbnail -->
+               <!-- book thumbnail -->
                <div class="mx-auto relative">
                   <?php
                   if (has_post_thumbnail()) {
@@ -75,7 +76,7 @@
                   </div>
                </div>
 
-               <!-- post content -->
+               <!-- book content -->
                <div class="text-center py-10 px-[2%] space-y-4">
                   <p class="font-medium uppercase text-gray-500">
                      <?php the_author(); ?>
