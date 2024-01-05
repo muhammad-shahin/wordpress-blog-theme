@@ -113,6 +113,16 @@
           }
         }
         ?>
+
+        <!-- language taxonomy by cpt ui -->
+        <div class="w-fit mt-10">
+          <h4 class="text-5xl font-semibold">
+            <?php _e("Lagnuage", "tech") ?>
+          </h4>
+          <p class="text-xl font-medium bg-purple-500 px-5 py-1 mt-4 rounded text-white">
+            <?php the_terms(get_the_ID(), 'language', '', '', ''); ?>
+          </p>
+        </div>
       </div>
 
       <!-- article footer -->

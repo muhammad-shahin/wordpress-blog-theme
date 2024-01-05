@@ -16,3 +16,7 @@ Text Domain: tech
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+pre {
+  color: black;
+}

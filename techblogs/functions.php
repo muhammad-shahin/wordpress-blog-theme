@@ -37,22 +37,30 @@ require get_template_directory() . "/inc/logo-position.php";
 // include blog search form
 require get_template_directory() . "/inc/search-form.php";
 
-// filter hook to add custom slug for chapter type post
-require get_template_directory() . "/inc/custom-chapter-slug.php";
+// filter hook to add custom slug for book type post
+require get_template_directory() . "/inc/custom-book-slug.php";
 
-// function tech_custom_chapter_slug($post_link, $id)
-// {
-//   $p = get_post($id);
-//   if (is_object($p) && 'chapter' == get_post_type($id)) {
-//     $parent_post_id = get_field('parent_book');
-//     $parent_post = get_post($parent_post_id);
-//     if ($parent_post) {
-//       $post_link = str_replace("%book%", $parent_post->post_name, $post_link);
-//     }
-//     return $post_link;
-//   }
-// }
-// add_filter('post_type_link', 'tech_custom_chapter_slug', 1, 2);
 
-// cmb2 attached posts
-// require get_template_directory() . "/inc/cmb2-attached-posts.php";
+// footer tags heading & tag items
+function tech_footer_language_heading($title)
+{
+  if (is_post_type_archive('book') || is_tax('language')) {
+    $title = __("Book By Language", "tech");
+  }
+  return $title;
+}
+add_filter("tech_footer_tag_heading", 'tech_footer_language_heading');
+
+function tech_footer_language_terms($tags)
+{
+  if (is_post_type_archive('book') || is_tax('language')) {
+    $tags = get_terms(
+      array(
+        'taxonomy' => 'language',
+        'hide_empty' => false
+      )
+    );
+  }
+  return $tags;
+}
+add_filter("tech_footer_tag_terms", 'tech_footer_language_terms');
